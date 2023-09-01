@@ -80,7 +80,7 @@ end
 
 function food:draw()
     color(10)
-    rectfill(self.x, self.y, self.x+self.scale-2, self.y+self.scale-2)
+    rectfill(self.x, self.y, self.x + self.scale-2, self.y + self.scale-2)
 end
 
 function food:move()
@@ -91,7 +91,7 @@ end
 function snake:draw()
     color(7)
    
-    rectfill(self.x,self.y,self.x+self.scale-2,self.y+self.scale-2)
+    rectfill(self.x, self.y,self.x + self.scale-2, self.y + self.scale-2)
    
     for i=1,#self.body do
         color(11)
