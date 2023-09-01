@@ -60,7 +60,7 @@ end
 function drawgame()
     cls(0)
     color(1)
-    rect(0,0,126,126)
+    rect(0, 0, 126, 126)
     food:draw()
     snake:draw()
 end
@@ -80,12 +80,12 @@ end
 
 function food:draw()
     color(10)
-    rectfill(self.x,self.y,self.x+self.scale-2,self.y+self.scale-2)
+    rectfill(self.x, self.y, self.x+self.scale-2, self.y+self.scale-2)
 end
 
 function food:move()
-    self.x = (flr(rnd(120/self.scale))*self.scale)+1
-    self.y = (flr(rnd(120/self.scale))*self.scale)+1
+    self.x = (flr(rnd(120 / self.scale)) * self.scale) + 1
+    self.y = (flr(rnd(120 / self.scale)) * self.scale) + 1
 end
 
 function snake:draw()
