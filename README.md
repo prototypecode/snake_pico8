@@ -135,7 +135,7 @@ function snake:move()
         end
     end
 
-    -- if your off the sceen die
+    -- off screen 
     if self.x > 126 then 
         game._draw = drawrip 
         game._update = updaterip end
@@ -151,30 +151,30 @@ function snake:move()
 end
 
 function snake:eat()
-    if self.x==food.x and self.y==food.y then
+    if self.x == food.x and self.y == food.y then
         food:move()
-        self.adding=true
+        self.adding = true
         sfx(0)
     end
 
     if self.adding then
-        if self.addcount==addlength then
-            self.adding=false
-            self.addcount=0
+        if self.addcount == addlength then
+            self.adding = false
+            self.addcount = 0
         else
-            self.addcount+=1
-            self.count+=1
+            self.addcount += 1
+            self.count += 1
         end
     end
-    if self.count-1==#self.body then
-        for i=1,#self.body-1 do 
-            self.body[i] = self.body[i+1]
+    if self.count-1 == #self.body then
+        for i=1, #self.body-1 do 
+            self.body[i] = self.body[i + 1]
         end
     end
    
-    self.body[self.count-1] = {}
-    self.body[self.count-1].x = self.x
-    self.body[self.count-1].y = self.y
+    self.body[self.count - 1] = {}
+    self.body[self.count - 1].x = self.x
+    self.body[self.count - 1].y = self.y
 end
 
 
