@@ -93,9 +93,9 @@ function snake:draw()
    
     rectfill(self.x, self.y,self.x + self.scale-2, self.y + self.scale-2)
    
-    for i=1,#self.body do
+    for i=1, #self.body do
         color(11)
-        rectfill(self.body[i].x,self.body[i].y,self.body[i].x+self.scale-2,self.body[i].y+self.scale-2)
+        rectfill(self.body[i].x, self.body[i].y, self.body[i].x + self.scale-2, self.body[i].y + self.scale-2)
     end
 end
 
