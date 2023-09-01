@@ -29,7 +29,7 @@ end
 
 function drawmenu()
     cls(1)
-    print("press z",50,50)
+    print("press z", 50, 50)
 end
 
 function updatemenu()
@@ -40,7 +40,7 @@ end
 
 function drawrip()
     cls(1)
-    print("press z to play again.",24,50,7)
+    print("press z to play again.", 24, 50, 7)
 end
 
 function updaterip()
@@ -49,11 +49,11 @@ end
 
 function updategame()
     snake:keypress()
-    if tick==speedinticks then
+    if tick == speedinticks then
         snake:move()
-        tick=1
+        tick = 1
     else
-        tick+=1
+        tick += 1
     end
 end
 
