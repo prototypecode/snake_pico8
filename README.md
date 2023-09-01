@@ -80,7 +80,7 @@ end
 
 function food:draw()
     color(10)
-    rectfill(self.x, self.y, self.x + self.scale-2, self.y + self.scale-2)
+    rectfill(self.x, self.y, self.x + self.scale - 2, self.y + self.scale - 2)
 end
 
 function food:move()
@@ -91,63 +91,63 @@ end
 function snake:draw()
     color(7)
    
-    rectfill(self.x, self.y,self.x + self.scale-2, self.y + self.scale-2)
+    rectfill(self.x, self.y,self.x + self.scale - 2, self.y + self.scale - 2)
    
     for i=1, #self.body do
         color(11)
-        rectfill(self.body[i].x, self.body[i].y, self.body[i].x + self.scale-2, self.body[i].y + self.scale-2)
+        rectfill(self.body[i].x, self.body[i].y, self.body[i].x + self.scale - 2, self.body[i].y + self.scale - 2)
     end
 end
 
 function snake:keypress()
     if btn(0) and
-       self.deltax!=1 then -- left
-        self.deltax=-1
-        self.deltay=0
+       self.deltax != 1 then -- left
+        self.deltax =- 1
+        self.deltay = 0
     end
     if btn(1) and
-       self.deltax!=-1 then -- right
-        self.deltax=1
-        self.deltay=0
+       self.deltax !=- 1 then -- right
+        self.deltax = 1
+        self.deltay = 0
     end
     if btn(2) and
-       self.deltay!=1 then -- up
-        self.deltay=-1
-        self.deltax=0
+       self.deltay != 1 then -- up
+        self.deltay =- 1
+        self.deltax = 0
     end
     if btn(3) and
-       self.deltay!=-1 then -- down
-        self.deltay=1
-        self.deltax=0
+       self.deltay != -1 then -- down
+        self.deltay = 1
+        self.deltax = 0
     end
 end
 
 function snake:move()
     self:eat() 
    
-    self.x+=self.deltax*(self.scale)
-    self.y+=self.deltay*(self.scale)
+    self.x += self.deltax * (self.scale)
+    self.y += self.deltay * (self.scale)
    
-    for i=1,#self.body do
-        if self.body[i].x==self.x and self.body[i].y==self.y then
-            game._draw=drawrip
-            game._update=updaterip
+    for i=1, #self.body do
+        if self.body[i].x == self.x and self.body[i].y == self.y then
+            game._draw = drawrip
+            game._update = updaterip
         end
     end
 
     -- if your off the sceen die
-    if self.x>126 then 
-        game._draw=drawrip 
-        game._update=updaterip end
-    if self.x<1 then 
-        game._draw=drawrip 
-        game._update=updaterip end
-    if self.y>126 then 
-        game._draw=drawrip 
-        game._update=updaterip end
-    if self.y<1 then 
-        game._draw=drawrip 
-        game._update=updaterip end
+    if self.x > 126 then 
+        game._draw = drawrip 
+        game._update = updaterip end
+    if self.x < 1 then 
+        game._draw = drawrip 
+        game._update = updaterip end
+    if self.y > 126 then 
+        game._draw = drawrip 
+        game._update = updaterip end
+    if self.y < 1 then 
+        game._draw = drawrip 
+        game._update = updaterip end
 end
 
 function snake:eat()
